@@ -7,11 +7,13 @@ export class CommentsService {
     {
       id: 1,
       taskId: 1,
+      authorId: 2,
       text: 'Какой-то текст',
     },
     {
       id: 2,
       taskId: 1,
+      authorId: 2,
       text: 'Ещё какой-то текст',
     },
   ];
@@ -24,5 +26,22 @@ export class CommentsService {
 
   findAll(): Comment[] {
     return this.comments;
+  }
+
+  create(
+    taskId: number,
+    authorId: number,
+    text: string,
+  ): Comment {
+    const comment: Comment = {
+      id: Date.now(),
+      taskId,
+      authorId,
+      text,
+    };
+
+    this.comments.push(comment);
+
+    return comment;
   }
 }
