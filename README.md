@@ -1,3 +1,3 @@
 # GRAPHQL Issue Tracker
 
-Учебный проект
+Учебный проект!
